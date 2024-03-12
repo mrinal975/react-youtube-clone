@@ -1,11 +1,12 @@
 import "./App.css";
+import PageHeader from "./layouts/PageHeader";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold text-red-500 underline">
-        Hello world!
-      </h1>
+      <div className="max-h-screen flex flex-col">
+        <PageHeader />
+      </div>
     </>
   );
 }
