@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 type CategoryPillProps = {
   categories: string[];
   selectedCategory: string;
-  onSelect: (category: string) => void;
+  onSelectCategory: (category: string) => void;
 };
 
 const TRANSLATE_AMOUNT = 200;
@@ -13,7 +13,7 @@ const TRANSLATE_AMOUNT = 200;
 function CategoryPills({
   categories,
   selectedCategory,
-  onSelect,
+  onSelectCategory,
 }: CategoryPillProps) {
   const [translate, setTranslate] = useState(0);
   const [isLeftVisible, setIsLeftVisible] = useState(false);
@@ -49,7 +49,7 @@ function CategoryPills({
         {categories.map((category) => (
           <Button
             key={category}
-            onClick={() => onSelect(category)}
+            onClick={() => onSelectCategory(category)}
             variant={selectedCategory === category ? "dark" : "default"}
             className="py-1 px-3 rounded-lg whitespace-nowrap"
           >
