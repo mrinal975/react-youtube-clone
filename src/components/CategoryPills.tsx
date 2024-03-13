@@ -1,9 +1,15 @@
 import { Button } from "./Button";
 type CategoryPillsProps = {
   categories: string[];
+  selectedCategory: string;
+  onSelectCategory: (category: string) => void;
 };
 
-function CategoryPills({ categories }: CategoryPillsProps) {
+function CategoryPills({
+  categories,
+  selectedCategory,
+  onSelectCategory,
+}: CategoryPillsProps) {
   return (
     <div className="overflow-x-hidden relative">
       <div
@@ -13,15 +19,13 @@ function CategoryPills({ categories }: CategoryPillsProps) {
         {categories.map((category) => (
           <Button
             key={category}
-            variant="dark"
+            variant={category === selectedCategory ? "dark" : "default"}
             className="px-3 py-1 rounded-lg whitespace-nowrap"
+            onClick={() => onSelectCategory(category)}
           >
             {category}
           </Button>
         ))}
-        {/* <Button className="py-1 px-3 rounded-lg whitespace-nowrap">
-          Javascript
-        </Button> */}
       </div>
     </div>
   );
