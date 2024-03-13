@@ -35,4 +35,7 @@ export const categories = [
   "Emacs Lisp",
   "Makefile",
   "Game Maker Language",
+  "C",
+  "CSS",
+  "HTML",
 ];
