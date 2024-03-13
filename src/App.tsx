@@ -1,4 +1,3 @@
-import "./App.css";
 import PageHeader from "./layouts/PageHeader";
 
 function App() {
